@@ -24,6 +24,9 @@ profiles must be directories with configuration files stored inside of `~/.confi
 before ricer copies them into place it will substitute @@C# with the according base16 colors, # being the base16 color number.
 color 1 has a special marker, @@C1@@
 
+## post commands
+`~/.config/ricer/post` is an executable file, place commands to execute after running the script. e.x. reloading your window manager and other themed applications
+
 ## ricer configuration directory example
 ```
 ricer

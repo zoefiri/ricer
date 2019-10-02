@@ -56,9 +56,7 @@ colorBuild(){
 #########################
 postCmd(){
    cp "$HOME/.config/ricer/colors/$1.yaml" ~/.config/ricer/colors/current.yaml
-   pal /home/zoe/dots/confs/palcolors
-   herbstclient reload
-   oomox-cli /opt/oomox/colors/Contributed/CUSTOM 1>/dev/null
+   $HOME/.config/ricer/post
 }
 
 ###################
@@ -78,7 +76,9 @@ then
    mkdir $HOME/.config/ricer/profiles
    mkdir $HOME/.config/ricer/ricertemplates
    mkdir $HOME/.config/ricer/ricertemplates/colors
-   touch ~/.config/ricer/confs
+   touch $HOME/.config/ricer/confs
+   touch $HOME/.config/ricer/post
+   chmod +x $HOME/.config/ricer/post
 fi
 
 for profile in $(ls -1 $HOME/.config/ricer/profiles/)
