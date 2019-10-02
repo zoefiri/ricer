@@ -71,6 +71,16 @@ loadProfile(){
 ########
 # main #
 ########
+if [ ! -e $HOME/.config/ricer ]
+then
+   mkdir $HOME/.config/ricer
+   mkdir $HOME/.config/ricer/colors
+   mkdir $HOME/.config/ricer/profiles
+   mkdir $HOME/.config/ricer/ricertemplates
+   touch ~/.config/ricer/confs
+
+fi
+
 for profile in $(ls -1 $HOME/.config/ricer/profiles/)
 do
    if [ "$1" = "$profile" ]
