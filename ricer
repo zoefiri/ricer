@@ -77,8 +77,8 @@ then
    mkdir $HOME/.config/ricer/colors
    mkdir $HOME/.config/ricer/profiles
    mkdir $HOME/.config/ricer/ricertemplates
+   mkdir $HOME/.config/ricer/ricertemplates/colors
    touch ~/.config/ricer/confs
-
 fi
 
 for profile in $(ls -1 $HOME/.config/ricer/profiles/)
