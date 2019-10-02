@@ -25,75 +25,76 @@ before ricer copies them into place it will substitute @@C# with the according b
 color 1 has a special marker, @@C1@@
 
 ## ricer configuration directory example
-
-`ricer`
-`├── colors`
-`│  ├── mochamod.yaml`
-`│  ├── pumpkin.yaml`
-`│  ├── snazzycoal.yaml`
-`│  ├── summercamp.yaml`
-`│  └── summerd.yaml`
-`├── confs`
-`├── profiles`
-`│  ├── halloween`
-`│  │  ├── compton.conf`
-`│  │  ├── config`
-`│  │  ├── current`
-`│  │  ├── current.yaml`
-`│  │  ├── custom.rasi`
-`│  │  ├── herbstluftwm`
-`│  │  │  ├── autostart`
-`│  │  │  ├── binds`
-`│  │  │  ├── oldstart`
-`│  │  │  ├── start`
-`│  │  │  └── theme`
-`│  │  ├── lemon`
-`│  │  ├── oomox`
-`│  │  ├── palcolors`
-`│  │  ├── testc`
-`│  │  └── userChrome.css`
-`│  └── roundHalloween`
-`│     ├── compton.conf`
-`│     ├── config`
-`│     ├── current`
-`│     ├── current.yaml`
-`│     ├── custom.rasi`
-`│     ├── herbstluftwm`
-`│     │  ├── autostart`
-`│     │  ├── binds`
-`│     │  ├── oldstart`
-`│     │  ├── start`
-`│     │  └── theme`
-`│     ├── lemon`
-`│     ├── oomox`
-`│     ├── palcolors`
-`│     ├── testc`
-`│     └── userChrome.css`
-`└── ricertemplates`
-   `├── colors`
-   `│  ├── base0`
-   `│  ├── base1`
-   `│  ├── base2`
-   `│  ├── base3`
-   `│  ├── base4`
-   `│  ├── base5`
-   `│  ├── base6`
-   `│  ├── base7`
-   `│  ├── base8`
-   `│  ├── base9`
-   `│  ├── base10`
-   `│  ├── base11`
-   `│  ├── base12`
-   `│  ├── base13`
-   `│  ├── base14`
-   `│  └── base15`
-   `├── compton.conf`
-   `├── config`
-   `├── herbstluftwm`
-   `│  ├── autostart`
-   `│  ├── binds`
-   `│  ├── oldstart`
-   `│  ├── start`
-   `│  └── theme`
-   `├── lemon`
-   `└── userChrome.css``
+```
+ricer
+├── colors
+│  ├── mochamod.yaml
+│  ├── pumpkin.yaml
+│  ├── snazzycoal.yaml
+│  ├── summercamp.yaml
+│  └── summerd.yaml
+├── confs
+├── profiles
+│  ├── halloween
+│  │  ├── compton.conf
+│  │  ├── config
+│  │  ├── current
+│  │  ├── current.yaml
+│  │  ├── custom.rasi
+│  │  ├── herbstluftwm
+│  │  │  ├── autostart
+│  │  │  ├── binds
+│  │  │  ├── oldstart
+│  │  │  ├── start
+│  │  │  └── theme
+│  │  ├── lemon
+│  │  ├── oomox
+│  │  ├── palcolors
+│  │  ├── testc
+│  │  └── userChrome.css
+│  └── roundHalloween
+│     ├── compton.conf
+│     ├── config
+│     ├── current
+│     ├── current.yaml
+│     ├── custom.rasi
+│     ├── herbstluftwm
+│     │  ├── autostart
+│     │  ├── binds
+│     │  ├── oldstart
+│     │  ├── start
+│     │  └── theme
+│     ├── lemon
+│     ├── oomox
+│     ├── palcolors
+│     ├── testc
+│     └── userChrome.css
+└── ricertemplates
+   ├── colors
+   │  ├── base0
+   │  ├── base1
+   │  ├── base2
+   │  ├── base3
+   │  ├── base4
+   │  ├── base5
+   │  ├── base6
+   │  ├── base7
+   │  ├── base8
+   │  ├── base9
+   │  ├── base10
+   │  ├── base11
+   │  ├── base12
+   │  ├── base13
+   │  ├── base14
+   │  └── base15
+   ├── compton.conf
+   ├── config
+   ├── herbstluftwm
+   │  ├── autostart
+   │  ├── binds
+   │  ├── oldstart
+   │  ├── start
+   │  └── theme
+   ├── lemon
+   └── userChrome.css
+   ``` 
