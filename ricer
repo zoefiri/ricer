@@ -1,0 +1,95 @@
+#!/bin/bash
+
+###############
+# read colors #
+###############
+readColors(){
+   i=-1
+   while read line; do
+      if [ "${line:0:4}" = "base" ]
+      then
+         i=$((i+1))
+         read base${i} <<< "${line:9:6}"
+      fi
+   done < "$HOME/.config/ricer/colors/$1.yaml" ; i=0
+}
+
+
+######################
+# read & sub configs #
+#         &          #
+#  make colorfiles   #
+######################
+colorBuild(){
+   while read line; do
+      rm -r $line
+      cp -r $HOME/.config/ricer/ricertemplates/${line##*/} $line
+      sed -i $line \
+         -e "s/@@C0/$base0/"\
+         -e "s/@@C1@@/$base1/g"\
+         -e "s/@@C2/$base2/g"\
+         -e "s/@@C3/$base3/g"\
+         -e "s/@@C4/$base4/g"\
+         -e "s/@@C5/$base5/g"\
+         -e "s/@@C6/$base6/g"\
+         -e "s/@@C7/$base7/g"\
+         -e "s/@@C8/$base8/g"\
+         -e "s/@@C9/$base9/g"\
+         -e "s/@@C10/$base10/g"\
+         -e "s/@@C11/$base11/g"\
+         -e "s/@@C12/$base12/g"\
+         -e "s/@@C13/$base13/g"\
+         -e "s/@@C14/$base14/g"\
+         -e "s/@@C15/$base15/g"
+            done < "$HOME/.config/ricer/confs"; i=0
+
+            while [ $i -lt 16 ]; do
+               CurrentColor="base$i"
+               echo ${!CurrentColor} > $HOME/.config/ricer/ricertemplates/colors/base$i
+               i=$((i+1))
+            done; i=0
+         }
+
+
+#########################
+# reload stuff + finish #
+#########################
+postCmd(){
+   cp "$HOME/.config/ricer/colors/$1.yaml" ~/.config/ricer/colors/current.yaml
+   pal /home/zoe/dots/confs/palcolors
+   herbstclient reload
+   oomox-cli /opt/oomox/colors/Contributed/CUSTOM 1>/dev/null
+}
+
+###################
+# profile loading #
+###################
+loadProfile(){
+   cp -r "$HOME/.config/ricer/profiles/$profile/"* "$HOME/.config/ricer/ricertemplates/"
+}
+
+########
+# main #
+########
+for profile in $(ls -1 $HOME/.config/ricer/profiles/)
+do
+   if [ "$1" = "$profile" ]
+   then
+      echo f
+      loadProfile $1
+      readColors current
+      colorBuild
+      postCmd
+   fi
+done
+
+for colorscheme in $(ls -1 $HOME/.config/ricer/colors/)
+do
+   if [ "$1.yaml" = "$colorscheme" ]
+   then
+      readColors $1
+      colorBuild 
+      postCmd $1
+   fi
+done
+
