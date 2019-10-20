@@ -8,9 +8,13 @@ notice 1: backup your configs before using this, I take no responsibility if you
 
 notice 2: at the moment this script is not able to handle multiple configs with the same filename, this will be fixed eventually but at the moment I have personally found that it is rarely an issue.
 
-## Usage
+## Features
+colorschemes + templates - ricer can use a colorscheme in the base16 .yaml format and apply it to special templates for configurations where instead of the actual colors being present, placeholders for colors are used
 
-`ricer <colorscheme>` will load and apply a colorscheme in base16 .yaml format in the directory `~/.config/ricer/colors`
+profiles - Color's not everything to the appearance of your desktop, so alternate profiles of configuration templates can quickly be swapped in and out and mixed and matched with colorschemes.
+
+## Usage
+`ricer <colorscheme>` will load and apply a colorscheme in base16 .yaml format in the directory `~/.config/ricer/colors`, you can find these at https://github.com/chriskempson/base16 
 
 `ricer <profile>` will load and apply a profile inside of `~/.config/ricer/profiles`
 
@@ -26,14 +30,13 @@ profiles must be directories with configuration files stored inside of `~/.confi
 
 before ricer copies them into place it will substitute @@C# with the according base16 colors, # being the base16 color number.
 
-color 1 has a special marker, @@C1@@
+color 1 has a special marker to distinguish it from colors 10 thru 16, @@C1@@ 
 
 ## post commands
 `~/.config/ricer/post` is an executable file, place commands to execute after running the script. e.x. reloading your window manager and other themed applications
 
 ## ricer configuration directory example
-```
-ricer
+`ricer
 ├── colors
 │  ├── mochamod.yaml
 │  ├── pumpkin.yaml
@@ -104,4 +107,4 @@ ricer
    │  └── theme
    ├── lemon
    └── userChrome.css
-   ``` 
+` 
